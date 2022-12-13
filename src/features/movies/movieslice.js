@@ -11,7 +11,7 @@ export const fetchAsyncMovies = createAsyncThunk("movies/fetchAsyncMovies",
 async(term)=>{
 
 const response = await movieApi
-        .get('?apikey='+APIKey+'&s=$'+term+'&type=movie');
+        .get('?apikey='+APIKey+'&s=$'+term+'&type=movie'+"/");
     // dispatch(addMovies(response.data));
      return(response.data);
 });
@@ -19,7 +19,7 @@ const response = await movieApi
 export const fetchAsyncShows = createAsyncThunk("shows/fetchAsyncShows", 
 async(term)=>{
  const response = await movieApi
-    .get('?apikey='+APIKey+'&s=$'+term+'&type=series');
+    .get('?apikey='+APIKey+'&s=$'+term+'&type=series'+"/");
      return(response.data);
 });
 
